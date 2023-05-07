@@ -1,0 +1,39 @@
+<html>
+<head>
+<script>
+function boldFirstHalf() {
+  // get the input text from the user
+  var input = document.getElementById("input").value;
+  // split the input into words by spaces
+  var words = input.split(" ");
+  // initialize an empty array to store the output words
+  var output = [];
+  // loop through each word in the input
+  for (var i = 0; i < words.length; i++) {
+    // get the current word
+    var word = words[i];
+    // get the length of the word
+    var len = word.length;
+    // get the index of the middle of the word
+    var mid = Math.floor(len / 2);
+    // get the first half of the word and wrap it in <b> tags
+    var firstHalf = "<b>" + word.slice(0, mid) + "</b>";
+    // get the second half of the word
+    var secondHalf = word.slice(mid);
+    // concatenate the first and second halves and add them to the output array
+    output.push(firstHalf + secondHalf);
+  }
+  // join the output array with spaces and display it in the output element
+  document.getElementById("output").innerHTML = output.join(" ");
+}
+</script>
+</head>
+<body>
+<h1>Bold First Half</h1>
+<p>Enter some text and click the button to bold the first half of each word.</p>
+<input type="text" id="input" placeholder="Enter some text here">
+<button onclick="boldFirstHalf()">Bold First Half</button>
+<p id="output"></p>
+</body>
+</html>
+```
